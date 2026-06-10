@@ -1,3 +1,0 @@
-# Cloudflare Pages SPA redirect — fixes 404 on page refresh
-# All routes (e.g. /profile, /explore) redirect to index.html
-/*    /index.html   200
