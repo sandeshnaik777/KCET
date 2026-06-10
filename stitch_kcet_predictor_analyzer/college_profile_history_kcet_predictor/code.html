@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KCET Predictor - College Search &amp; Details 2026</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#eef1f3",
+                    "primary": "#002045",
+                    "secondary": "#1960a3",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#002713",
+                    "tertiary-fixed-dim": "#74db9d",
+                    "surface-container": "#ebeef0",
+                    "primary-fixed": "#d6e3ff",
+                    "inverse-surface": "#2d3133",
+                    "surface-container-low": "#f1f4f6",
+                    "on-secondary-fixed-variant": "#004881",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#adc7f7",
+                    "on-background": "#181c1e",
+                    "secondary-fixed": "#d3e4ff",
+                    "tertiary-fixed": "#91f8b8",
+                    "on-secondary-container": "#00477f",
+                    "outline": "#74777f",
+                    "on-primary-fixed-variant": "#2d476f",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#4bb278",
+                    "on-secondary-fixed": "#001c38",
+                    "primary-container": "#1a365d",
+                    "on-tertiary-fixed-variant": "#00522f",
+                    "outline-variant": "#c4c6cf",
+                    "surface-bright": "#f7fafc",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-primary": "#ffffff",
+                    "primary-fixed-dim": "#adc7f7",
+                    "background": "#f7fafc",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#001b3c",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#a2c9ff",
+                    "on-surface": "#181c1e",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#43474e",
+                    "tertiary-container": "#003f23",
+                    "secondary-container": "#7db6ff",
+                    "surface-variant": "#e0e3e5",
+                    "surface-dim": "#d7dadc",
+                    "surface": "#f7fafc",
+                    "on-tertiary-fixed": "#002110",
+                    "surface-tint": "#455f88",
+                    "on-primary-container": "#86a0cd",
+                    "surface-container-high": "#e5e9eb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "container-margin": "20px",
+                    "base": "4px",
+                    "xs": "4px",
+                    "gutter": "16px",
+                    "sm": "8px",
+                    "md": "16px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex flex-col min-h-screen relative">
+<!-- Top Navigation Area (Combined App Bar & SideNav for Desktop) -->
+<div class="flex flex-col md:flex-row flex-1">
+<!-- Side Navigation (Desktop only) -->
+<nav class="hidden md:flex flex-col p-lg gap-md bg-surface-container-low border-r border-outline-variant h-full w-64 fixed left-0 top-0 transition-all duration-200 z-50">
+<div class="mb-lg flex flex-col gap-sm">
+<div class="font-headline-md text-headline-md text-primary truncate">KCET Predictor</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">College Admissions 2026</div>
+</div>
+<ul class="flex flex-col gap-sm flex-1">
+<li>
+<a class="flex items-center gap-md p-sm text-on-surface-variant hover:bg-surface-variant rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md p-sm text-on-surface-variant hover:bg-surface-variant rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">query_stats</span>
+<span class="font-label-md text-label-md">Predictor</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md p-sm bg-secondary-container text-on-secondary-container font-bold rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">list_alt</span>
+<span class="font-label-md text-label-md">Cutoffs</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md p-sm text-on-surface-variant hover:bg-surface-variant rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">insights</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md p-sm text-on-surface-variant hover:bg-surface-variant rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-label-md text-label-md">Expert Guidance</span>
+</a>
+</li>
+</ul>
+<button class="w-full bg-primary text-on-primary py-sm px-md rounded-DEFAULT font-label-md text-label-md hover:bg-primary/90 transition-colors mt-auto">
+                Start Predicting
+            </button>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col md:ml-64 w-full">
+<!-- TopAppBar (Mobile & Desktop) -->
+<header class="flex justify-between items-center px-container-margin py-md w-full sticky top-0 z-40 bg-surface shadow-sm bg-surface-container transition-colors duration-200 md:hidden">
+<div class="font-headline-lg-mobile text-headline-lg-mobile text-primary">KCET Predictor</div>
+<div class="flex gap-md">
+<button class="text-primary hover:text-secondary transition-colors"><span class="material-symbols-outlined">dark_mode</span></button>
+<button class="text-primary hover:text-secondary transition-colors"><span class="material-symbols-outlined">notifications</span></button>
+</div>
+</header>
+<header class="hidden md:flex justify-between items-center px-container-margin py-md w-full sticky top-0 z-40 bg-surface shadow-sm transition-colors duration-200">
+<div class="font-headline-md text-headline-md text-primary">College Search</div>
+<div class="flex gap-md">
+<button class="text-primary hover:text-secondary transition-colors"><span class="material-symbols-outlined">dark_mode</span></button>
+<button class="text-primary hover:text-secondary transition-colors"><span class="material-symbols-outlined">notifications</span></button>
+</div>
+</header>
+<div class="p-container-margin md:p-lg flex flex-col gap-lg max-w-[1280px] mx-auto w-full">
+<!-- Search Bar -->
+<section class="w-full relative z-30">
+<div class="relative w-full max-w-2xl mx-auto md:mx-0">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-xl pr-sm py-sm border border-outline-variant focus:border-primary focus:border-2 rounded-DEFAULT bg-surface-container-lowest font-body-md text-body-md text-on-surface shadow-sm transition-all outline-none h-[48px]" placeholder="Search for a College (e.g., RVCE, PES)..." type="text"/>
+</div>
+</section>
+<!-- College Hero Section (Bento Grid Style) -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-md">
+<!-- Main Info Card -->
+<div class="col-span-1 md:col-span-8 bg-surface-container-lowest p-md rounded-lg shadow-sm border border-surface-container flex flex-col gap-md relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10"></div>
+<div class="flex items-start gap-md">
+<div class="w-16 h-16 bg-surface-container rounded-DEFAULT flex items-center justify-center shrink-0 border border-outline-variant/30">
+<span class="material-symbols-outlined text-3xl text-primary">school</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-sm mb-xs">
+<h1 class="font-headline-md text-headline-md text-on-surface">R.V. College of Engineering</h1>
+<span class="bg-tertiary-container/10 text-tertiary-container px-xs py-xs rounded-sm font-label-sm text-label-sm border border-tertiary-container/20">Autonomous</span>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant font-body-md text-body-md mb-sm">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span>Bengaluru, Karnataka</span>
+</div>
+<div class="flex flex-wrap gap-sm">
+<span class="bg-surface-container-high px-sm py-xs rounded-full font-label-sm text-label-sm text-on-surface-variant">Estd. 1963</span>
+<span class="bg-surface-container-high px-sm py-xs rounded-full font-label-sm text-label-sm text-on-surface-variant">VTU Affiliated</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Key Stats Side Cards -->
+<div class="col-span-1 md:col-span-4 flex flex-row md:flex-col gap-md">
+<div class="flex-1 bg-surface-container-lowest p-md rounded-lg shadow-sm border border-surface-container flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">NIRF Rank</span>
+<span class="font-headline-md text-headline-md text-primary">89</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-3xl">workspace_premium</span>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-md rounded-lg shadow-sm border border-surface-container flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Intake</span>
+<span class="font-headline-md text-headline-md text-primary">~1200</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-3xl">groups</span>
+</div>
+</div>
+</section>
+<!-- Data Section: Cutoff History -->
+<section class="flex flex-col gap-sm">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-sm gap-md">
+<h2 class="font-headline-md text-headline-md text-on-surface border-l-4 border-secondary pl-sm">Complete Cutoff History</h2>
+<!-- Filters -->
+<div class="flex flex-wrap gap-sm w-full md:w-auto">
+<select class="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT px-sm py-xs font-body-md text-body-md text-on-surface focus:border-primary outline-none h-[40px] min-w-[120px]">
+<option>General Merit (GM)</option>
+<option>2A</option>
+<option>3B</option>
+<option>SC/ST</option>
+</select>
+<select class="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT px-sm py-xs font-body-md text-body-md text-on-surface focus:border-primary outline-none h-[40px]">
+<option>Year 2025</option>
+<option>Year 2024</option>
+<option>Year 2023</option>
+</select>
+</div>
+</div>
+<!-- Cutoff Table Container (Glassmorphism inspired) -->
+<div class="bg-surface-container-lowest/80 backdrop-blur-sm rounded-lg shadow-sm border border-outline-variant overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant text-on-surface-variant font-label-md text-label-md">
+<th class="p-sm whitespace-nowrap sticky left-0 bg-surface-container-low z-10">Branch Name</th>
+<th class="p-sm text-center">Mock Allotment</th>
+<th class="p-sm text-center">Round 1</th>
+<th class="p-sm text-center bg-primary/5 text-primary">Round 2</th>
+<th class="p-sm text-center">2nd Extended</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface">
+<!-- Row 1 -->
+<tr class="border-b border-outline-variant/50 hover:bg-surface-variant/30 transition-colors">
+<td class="p-sm sticky left-0 bg-surface-container-lowest/90 backdrop-blur-sm z-10 font-medium border-r border-outline-variant/30">Computer Science (CSE)</td>
+<td class="p-sm text-center text-on-surface-variant">245</td>
+<td class="p-sm text-center font-medium">312</td>
+<td class="p-sm text-center bg-primary/5 text-primary font-bold">385</td>
+<td class="p-sm text-center text-on-surface-variant">410</td>
+</tr>
+<!-- Row 2 -->
+<tr class="border-b border-outline-variant/50 hover:bg-surface-variant/30 transition-colors">
+<td class="p-sm sticky left-0 bg-surface-container-lowest/90 backdrop-blur-sm z-10 font-medium border-r border-outline-variant/30">Artificial Intelligence (AI)</td>
+<td class="p-sm text-center text-on-surface-variant">450</td>
+<td class="p-sm text-center font-medium">520</td>
+<td class="p-sm text-center bg-primary/5 text-primary font-bold">615</td>
+<td class="p-sm text-center text-on-surface-variant">680</td>
+</tr>
+<!-- Row 3 -->
+<tr class="border-b border-outline-variant/50 hover:bg-surface-variant/30 transition-colors">
+<td class="p-sm sticky left-0 bg-surface-container-lowest/90 backdrop-blur-sm z-10 font-medium border-r border-outline-variant/30">Electronics (ECE)</td>
+<td class="p-sm text-center text-on-surface-variant">890</td>
+<td class="p-sm text-center font-medium">1024</td>
+<td class="p-sm text-center bg-primary/5 text-primary font-bold">1250</td>
+<td class="p-sm text-center text-on-surface-variant">1420</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Insights & Comparison Split -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-md mt-sm">
+<!-- Insights Bento Box -->
+<div class="bg-surface-container-low p-md rounded-lg shadow-sm border border-outline-variant/50 flex flex-col gap-sm">
+<div class="flex items-center gap-xs text-primary mb-xs">
+<span class="material-symbols-outlined">lightbulb</span>
+<h3 class="font-headline-md text-headline-md text-mobile md:text-headline-md">College Insights</h3>
+</div>
+<ul class="space-y-xs font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-start gap-xs">
+<span class="material-symbols-outlined text-[20px] text-tertiary-container shrink-0 mt-[2px]">check_circle</span>
+<span>High placement percentage (95%+) for CSE and ECE branches.</span>
+</li>
+<li class="flex items-start gap-xs">
+<span class="material-symbols-outlined text-[20px] text-tertiary-container shrink-0 mt-[2px]">check_circle</span>
+<span>Excellent lab infrastructure and industry tie-ups.</span>
+</li>
+<li class="flex items-start gap-xs">
+<span class="material-symbols-outlined text-[20px] text-error shrink-0 mt-[2px]">info</span>
+<span>Hostel availability can be highly competitive for first-year students.</span>
+</li>
+</ul>
+</div>
+<!-- Trend Chart Placeholder -->
+<div class="bg-surface-container-lowest p-md rounded-lg shadow-sm border border-outline-variant flex flex-col gap-sm items-center justify-center min-h-[200px] relative overflow-hidden">
+<div class="absolute top-sm left-sm font-label-md text-label-md text-on-surface-variant z-10">Rank Trends (Last 3 Years)</div>
+<div class="w-full h-full opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0wIDEwMCBDIDUwIDE1MCwgMTUwIDUwLCAyMDAgMTAwIFMgMzAwIDUwLCA0MDAgMTAwIiBzdHJva2U9IiMwMDIwNDUiIHN0cm9rZS13aWR0aD0iNCIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==')] bg-center bg-no-repeat bg-cover"></div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="bg-surface/80 px-sm py-xs rounded-DEFAULT font-label-sm text-label-sm text-primary backdrop-blur-sm border border-outline-variant/30">Interactive Chart Area</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<footer class="w-full px-container-margin py-xl flex flex-col md:flex-row justify-between items-center text-center md:text-left bg-primary dark:bg-primary-container mt-auto">
+<div class="font-headline-md text-headline-md text-on-primary mb-md md:mb-0">KCET Predictor</div>
+<div class="flex flex-col md:flex-row gap-md font-body-md text-body-md text-on-primary/80">
+<a class="hover:text-white underline transition-opacity" href="#">Privacy Policy</a>
+<a class="hover:text-white underline transition-opacity" href="#">Terms of Service</a>
+<a class="hover:text-white underline transition-opacity" href="#">Counseling FAQ</a>
+<a class="hover:text-white underline transition-opacity" href="#">Contact Us</a>
+</div>
+<div class="font-body-md text-body-md text-on-primary/80 mt-md md:mt-0">© 2026 KCET Predictor. All rights reserved.</div>
+</footer>
+</main>
+</div>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-2 py-3 md:hidden bg-surface-container-lowest dark:bg-surface-container shadow-[0_-2px_10px_0_rgba(0,0,0,0.05)] rounded-t-xl transition-all">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant/50 transition-colors w-16 h-14 rounded-lg" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant/50 transition-colors w-16 h-14 rounded-lg" href="#">
+<span class="material-symbols-outlined">query_stats</span>
+<span class="font-label-sm text-label-sm mt-1">Predictor</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-secondary-container text-on-primary-container dark:text-on-secondary-container rounded-full px-4 py-1 Active: scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">list_alt</span>
+<span class="font-label-sm text-label-sm mt-1">Cutoffs</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant/50 transition-colors w-16 h-14 rounded-lg" href="#">
+<span class="material-symbols-outlined">insights</span>
+<span class="font-label-sm text-label-sm mt-1">Analytics</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant/50 transition-colors w-16 h-14 rounded-lg" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-label-sm text-label-sm mt-1">Guidance</span>
+</a>
+</nav>
+</body></html>
