@@ -142,11 +142,9 @@ export default function Predictor() {
 
   const maxCutoff = allResults.reduce((max, r) => Math.max(max, r.cutoff || 0), 0)
 
-  const sortedResults = (items) => {
-    if (!items) return []
-    if (sortBy === 'cutoff') return [...items].sort((a, b) => a.cutoff - b.cutoff)
-    return items
-  }
+  const displayItems = sortBy === 'cutoff'
+    ? [...allResults].sort((a, b) => a.cutoff - b.cutoff)
+    : allResults
 
   return (
     <div>
@@ -252,15 +250,13 @@ export default function Predictor() {
                       />
                     ) : (
                       <div className="space-y-3">
-                        {['high', 'moderate', 'low'].flatMap(chanceKey =>
-                          sortedResults(results[chanceKey]).map((item, idx) => (
-                            <ResultCard
-                              key={`${item.id}-${idx}`}
-                              item={item}
-                              maxCutoff={maxCutoff}
-                            />
-                          ))
-                        )}
+                        {displayItems.map((item, idx) => (
+                          <ResultCard
+                            key={`${item.id}-${idx}`}
+                            item={item}
+                            maxCutoff={maxCutoff}
+                          />
+                        ))}
                       </div>
                     )}
                   </>
