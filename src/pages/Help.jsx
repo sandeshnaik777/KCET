@@ -259,10 +259,7 @@ export default function Help() {
                     : <><PhoneCall size={15} /> Submit Request</>}
                 </button>
 
-                <p className="text-[10px] text-slate-400 dark:text-slate-500 text-center leading-snug">
-                  * First submission activates email delivery to {EXPERT_EMAIL}.<br />
-                  Check your inbox for a one-time confirmation from Formsubmit.
-                </p>
+
               </form>
             )}
           </div>
