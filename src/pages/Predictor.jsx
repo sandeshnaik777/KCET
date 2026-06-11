@@ -105,7 +105,7 @@ export default function Predictor() {
   const [round,        setRound]        = useState(lastRound || 'First Round')
   const [branchFilter, setBranchFilter] = useState('')
   const [submitted,    setSubmitted]    = useState(false)
-  const [sortBy,       setSortBy]       = useState('chance') // 'chance' | 'cutoff'
+  const [sortBy,       setSortBy]       = useState('cutoff') // 'chance' | 'cutoff'
 
   const isValid = rank && parseInt(rank) > 0 && parseInt(rank) <= 200000
 
