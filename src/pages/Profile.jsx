@@ -63,7 +63,7 @@ const HOW_TO_EARN = [
 
 export default function Profile() {
   const navigate = useNavigate()
-  const { user, profile, signOut, loadProfile, refreshProfile } = useAuth()
+  const { user, profile, signOut, loadProfile, refreshProfile, setShowAuthModal } = useAuth()
   const [refreshing, setRefreshing] = useState(false)
 
   // Auto-refresh credits when Profile page mounts (picks up referral bonuses)
@@ -81,7 +81,7 @@ export default function Profile() {
             <User size={40} className="text-slate-300 dark:text-navy-600 mx-auto mb-3" />
             <p className="text-base font-bold text-slate-700 dark:text-slate-300 mb-1">Not signed in</p>
             <p className="text-sm text-slate-400 dark:text-slate-500 mb-4">Create an account to track your usage and earn credits.</p>
-            <button className="btn-primary" onClick={() => navigate('/')}>Go to Home</button>
+            <button className="btn-primary mx-auto" onClick={() => setShowAuthModal(true)}>Sign In / Create Account</button>
           </div>
         </div>
       </div>
