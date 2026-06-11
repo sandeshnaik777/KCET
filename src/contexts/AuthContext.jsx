@@ -4,7 +4,7 @@ import { supabase } from '../lib/supabase'
 export const FREE_PREDICTIONS    = 3
 export const FREE_COLLEGE_VIEWS  = 5
 export const FREE_MINUTES        = 6
-export const CREDITS_PER_REFERRAL = 25
+export const CREDITS_PER_REFERRAL = 100
 
 const SK = {
   startTime:    'kcet_start_time',
@@ -78,16 +78,16 @@ export function AuthProvider({ children }) {
         const refCode = pendingReferralRef.current
         pendingReferralRef.current = null
 
-        // Validate referral code — new user gets 13 credits if valid, 10 otherwise
-        // Referrer gets +25 automatically via the add_referral_bonus DB trigger
-        let bonusCredits = 10
+        // Validate referral code
+        // Referrer gets +100 automatically via the add_referral_bonus DB trigger
+        let bonusCredits = 50
         if (refCode) {
           const { data: refOwner } = await supabase
             .from('profiles')
             .select('id')
             .eq('referral_code', refCode.toUpperCase())
             .maybeSingle()
-          if (refOwner) bonusCredits = 13
+          if (refOwner) bonusCredits = 50
         }
 
         const { data: created, error: insertErr } = await supabase

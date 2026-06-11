@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS public.profiles (
   email          text,
   referral_code  text        UNIQUE NOT NULL,
   referred_by    text,        -- referral code of person who referred them
-  credits        integer     NOT NULL DEFAULT 10,
+  credits        integer     NOT NULL DEFAULT 50,
   created_at     timestamptz NOT NULL DEFAULT now()
 );
 

@@ -15,7 +15,7 @@ AS $$
 BEGIN
   IF NEW.referred_by IS NOT NULL THEN
     UPDATE public.profiles
-    SET credits = credits + 25
+    SET credits = credits + 100
     WHERE referral_code = NEW.referred_by;
   END IF;
   RETURN NEW;

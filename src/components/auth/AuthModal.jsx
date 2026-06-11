@@ -101,7 +101,7 @@ export default function AuthModal() {
         // modal will close via auth state change
       } else {
         const result = await signUp(email, password, refCode)
-        const bonus = result.bonusCredits > 10 ? ' +3 bonus credits for using a referral!' : ''
+        const bonus = ' You received 50 free credits!'
         setSuccess(`Account created! Check your email to verify.${bonus}`)
       }
     } catch (err) {
@@ -170,7 +170,7 @@ export default function AuthModal() {
                 <span className="text-xs font-bold text-white">Referral Bonus</span>
               </div>
               <p className="text-xs text-brand-200 leading-snug">
-                Refer a friend → you both get bonus credits. Each referral = +25 credits for you!
+                Refer a friend → you both get bonus credits. Each referral = +100 credits for you!
               </p>
             </div>
           </div>
@@ -235,7 +235,7 @@ export default function AuthModal() {
             {tab === 'signup' && (
               <div>
                 <label htmlFor="auth-referral" className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1.5">
-                  Referral Code <span className="font-normal text-slate-400">(optional — get +3 bonus credits)</span>
+                  Referral Code <span className="font-normal text-slate-400">(optional — help a friend earn credits)</span>
                 </label>
                 <div className="relative">
                   <Gift size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />

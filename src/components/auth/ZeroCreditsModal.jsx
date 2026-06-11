@@ -63,11 +63,11 @@ export default function ZeroCreditsModal() {
               <div className="flex items-center gap-2 mb-2">
                 <Gift size={16} className="text-brand-600 dark:text-brand-400" />
                 <span className="text-sm font-bold text-slate-800 dark:text-white">
-                  Refer a Friend — Get +25 Credits
+                  Refer a Friend — Get +100 Credits
                 </span>
               </div>
               <p className="text-xs text-slate-500 dark:text-slate-400 mb-3">
-                Share your referral code. Each friend who signs up gives you 25 free credits!
+                Share your referral code. Each friend who signs up gives you 100 free credits!
               </p>
               {/* Code display */}
               <div className="bg-white dark:bg-navy-800 rounded-lg px-4 py-2 text-center mb-3 border border-brand-100 dark:border-navy-700">

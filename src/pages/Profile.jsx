@@ -57,8 +57,8 @@ function CopyButton({ text, label = 'Copy' }) {
 const HOW_TO_EARN = [
   { step: '1', text: 'Copy your unique referral code above' },
   { step: '2', text: 'Share it with friends appearing in KCET 2026' },
-  { step: '3', text: 'When they sign up using your code, you get +25 credits' },
-  { step: '4', text: 'They also get +3 bonus credits — win-win!' },
+  { step: '3', text: 'When they sign up using your code, you get +100 credits' },
+  { step: '4', text: 'They also get 50 credits to start!' },
 ]
 
 export default function Profile() {
@@ -151,7 +151,7 @@ export default function Profile() {
         <div className="grid grid-cols-3 gap-3 mb-5">
           <StatBadge icon={Zap}    label="Credits"    value={profile.credits}             color="text-brand-500"  />
           <StatBadge icon={Users}  label="Referrals"  value={totalReferrals}              color="text-green-500"  />
-          <StatBadge icon={Star}   label="Bonus Earned" value={`+${totalReferrals * 25}`} color="text-yellow-500" />
+          <StatBadge icon={Star}   label="Bonus Earned" value={`+${totalReferrals * 100}`} color="text-yellow-500" />
         </div>
 
         {/* ── Credits ───────────────────────────────────────────────────────── */}
@@ -174,11 +174,11 @@ export default function Profile() {
           <CreditBar credits={profile.credits} max={30} />
           <div className="grid grid-cols-3 gap-2 mt-4 text-center">
             <div className="bg-slate-50 dark:bg-navy-800 rounded-lg py-2.5 px-2">
-              <p className="text-sm font-bold text-slate-800 dark:text-white">10</p>
+              <p className="text-sm font-bold text-slate-800 dark:text-white">50</p>
               <p className="text-[10px] text-slate-400">Base credits</p>
             </div>
             <div className="bg-slate-50 dark:bg-navy-800 rounded-lg py-2.5 px-2">
-              <p className="text-sm font-bold text-green-600 dark:text-green-400">+{totalReferrals * 25}</p>
+              <p className="text-sm font-bold text-green-600 dark:text-green-400">+{totalReferrals * 100}</p>
               <p className="text-[10px] text-slate-400">From referrals</p>
             </div>
             <div className="bg-slate-50 dark:bg-navy-800 rounded-lg py-2.5 px-2">
