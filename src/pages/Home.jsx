@@ -119,7 +119,7 @@ export default function Home() {
               <span className="text-brand-400">Make it count.</span>
             </h1>
             <p className="text-sm md:text-base text-navy-200 mb-6 leading-relaxed">
-              Enter your KCET rank and discover the engineering colleges you are most likely to get into based on 2024 cutoff trends.
+              Enter your KCET rank and discover the engineering colleges you are most likely to get into based on 2025 cutoff trends.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
               <button
@@ -135,7 +135,7 @@ export default function Home() {
                 onClick={() => navigate('/explore')}
                 className="flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-navy-600 hover:bg-navy-800 text-navy-100 font-semibold text-sm transition-colors"
               >
-                View 2024 Cutoffs
+                View 2025 Cutoffs
               </button>
             </div>
             {/* Live viewer badge */}
