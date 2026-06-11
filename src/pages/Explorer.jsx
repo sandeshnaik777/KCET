@@ -136,6 +136,16 @@ export default function Explorer() {
   const roundCols = useMemo(() => buildAllRoundColumns(category), [category])
   const isGM = CATEGORY_MAP[category] === 'GM'
 
+  // Extract all unique branches for the selected year
+  const availableBranches = useMemo(() => {
+    if (!rows) return []
+    const set = new Set()
+    for (const r of rows) {
+      if (r.Branch) set.add(r.Branch)
+    }
+    return Array.from(set).sort()
+  }, [rows])
+
   // Build college → branches map, filtered by selection
   const processedData = useMemo(() => {
     if (!rows) return {}
@@ -151,8 +161,8 @@ export default function Explorer() {
       // Filter by selected college code
       if (selectedCode && code !== selectedCode) continue
 
-      // Filter by branch text
-      if (branchFilter && !branch.toLowerCase().includes(branchFilter.toLowerCase())) continue
+      // Filter by branch
+      if (branchFilter && branch !== branchFilter) continue
 
       if (!byCode[code]) byCode[code] = { code, name, branches: {} }
 
@@ -226,17 +236,24 @@ export default function Explorer() {
               </div>
             </div>
 
-            {/* Branch text filter */}
+            {/* Branch SELECT */}
             <div>
               <label className="label">Filter by Branch</label>
-              <input
-                id="explorer-branch-filter"
-                type="text"
-                placeholder="e.g. CSE, AI, Civil, Mech…"
-                value={branchFilter}
-                onChange={(e) => setBranchFilter(e.target.value)}
-                className="input-field"
-              />
+              <div className="relative">
+                <select
+                  id="explorer-branch-filter"
+                  value={branchFilter}
+                  onChange={(e) => setBranchFilter(e.target.value)}
+                  className="input-field pr-10 appearance-none"
+                  disabled={loading}
+                >
+                  <option value="">— All Branches —</option>
+                  {availableBranches.map(b => (
+                    <option key={b} value={b}>{b}</option>
+                  ))}
+                </select>
+                <ChevronDown size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
+              </div>
             </div>
           </div>
 
