@@ -36,6 +36,13 @@ function CutoffBar({ value, max, colorClass }) {
   )
 }
 
+const ROUND_SHORT = {
+  'Mock': 'Mock Cutoff',
+  'First Round': 'R1 Cutoff',
+  'Second Round': 'R2 Cutoff',
+  'Second Extended Round': 'R2 Ext Cutoff'
+}
+
 function ResultCard({ item, round, category, maxCutoff }) {
   const cfg = CHANCE_CONFIG[item.chance]
   const chipCfg = CHANCE_LABELS[item.chance]
@@ -73,7 +80,9 @@ function ResultCard({ item, round, category, maxCutoff }) {
 
       <div className="mt-4 space-y-2">
         <div className="flex items-center gap-2">
-          <span className="text-xs text-slate-400 dark:text-slate-500 w-20 flex-shrink-0">R1 Cutoff</span>
+          <span className="text-xs text-slate-400 dark:text-slate-500 w-20 flex-shrink-0">
+            {ROUND_SHORT[round] || 'Cutoff'}
+          </span>
           <CutoffBar value={item.cutoff} max={maxCutoff} colorClass={barColor} />
         </div>
       </div>
@@ -254,6 +263,7 @@ export default function Predictor() {
                           <ResultCard
                             key={`${item.id}-${idx}`}
                             item={item}
+                            round={round}
                             maxCutoff={maxCutoff}
                           />
                         ))}
