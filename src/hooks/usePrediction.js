@@ -31,8 +31,8 @@ export function usePrediction({ rank, category, year, round, branchFilter, colle
       if (collegeCode && row.CollegeCode !== collegeCode) continue
       if (!collegeCode && collegeName && row.CollegeName !== collegeName) continue
 
-      // Optional branch keyword filter
-      if (branchFilter && !row.Branch.toLowerCase().includes(branchFilter.toLowerCase())) continue
+      // Optional branch exact match
+      if (branchFilter && row.Branch !== branchFilter) continue
 
       let cutoff  = parseCutoff(row[catColumn])
       let usedGM  = false

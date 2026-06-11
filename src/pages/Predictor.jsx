@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { Sparkles, MapPin, Info, ChevronDown, ChevronUp, SlidersHorizontal, ArrowUpDown } from 'lucide-react'
 import Topbar from '../components/layout/Topbar'
 import RankInput from '../components/shared/RankInput'
@@ -10,6 +10,7 @@ import { SkeletonList } from '../components/ui/SkeletonCard'
 import EmptyState from '../components/ui/EmptyState'
 import ErrorState from '../components/ui/ErrorState'
 import { usePrediction } from '../hooks/usePrediction'
+import { useFullTableQuery } from '../hooks/useSupabaseQuery'
 import { CHANCE_CONFIG } from '../utils/chanceCalculator'
 import useAppStore from '../store/useAppStore'
 import { buildGMColumn, buildColumn } from '../utils/columnBuilder'
@@ -84,7 +85,6 @@ function ResultCard({ item, round, category, maxCutoff }) {
   )
 }
 
-const QUICK_BRANCHES = ['CSE', 'ECE', 'Mech', 'Civil', 'AI', 'IT']
 
 export default function Predictor() {
   const { lastRank, lastCategory, lastYear, lastRound, setLastInputs } = useAppStore()
@@ -99,6 +99,18 @@ export default function Predictor() {
   const [sortBy,       setSortBy]       = useState('chance') // 'chance' | 'cutoff'
 
   const isValid = rank && parseInt(rank) > 0 && parseInt(rank) <= 200000
+
+  // Fetch all rows for the year to get available branches
+  const { data: fullRows } = useFullTableQuery({ year })
+
+  const availableBranches = useMemo(() => {
+    if (!fullRows) return []
+    const set = new Set()
+    for (const r of fullRows) {
+      if (r.Branch) set.add(r.Branch)
+    }
+    return Array.from(set).sort()
+  }, [fullRows])
 
   const { results, totalResults, loading, error } = usePrediction({
     rank, category, year, round,
@@ -154,31 +166,18 @@ export default function Predictor() {
               <div>
                 <label className="label">Preferred Course</label>
                 <div className="relative mb-2">
-                  <input
+                  <select
                     id="predictor-branch-filter"
-                    type="text"
-                    placeholder="e.g., Computer Science"
                     value={branchFilter}
                     onChange={(e) => setBranchFilter(e.target.value)}
-                    className="input-field"
-                  />
-                </div>
-                <div className="flex flex-wrap gap-1.5">
-                  {QUICK_BRANCHES.map(b => (
-                    <button
-                      type="button"
-                      key={b}
-                      onClick={() => setBranchFilter(b === branchFilter ? '' : b)}
-                      className={`text-xs px-2.5 py-1 rounded-full border transition-colors font-medium
-                        ${branchFilter === b
-                          ? 'bg-brand-600 border-brand-600 text-white'
-                          : 'bg-white dark:bg-navy-700 border-slate-200 dark:border-navy-600 text-slate-600 dark:text-slate-300 hover:border-brand-400'
-                        }`}
-                      id={`branch-chip-${b}`}
-                    >
-                      {b}
-                    </button>
-                  ))}
+                    className="input-field pr-10 appearance-none"
+                  >
+                    <option value="">— All Branches —</option>
+                    {availableBranches.map(b => (
+                      <option key={b} value={b}>{b}</option>
+                    ))}
+                  </select>
+                  <ChevronDown size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
                 </div>
               </div>
 
