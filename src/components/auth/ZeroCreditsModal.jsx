@@ -14,22 +14,43 @@ export default function ZeroCreditsModal() {
 
   if (!showZeroCredits) return null
 
-  const referralLink = profile?.referral_code
-    ? `${window.location.origin}?ref=${profile.referral_code}`
-    : window.location.origin
+  const getShareMessage = () => `🔥 KCET ವಿದ್ಯಾರ್ಥಿಗಳಿಗಾಗಿ ಉಚಿತ ವೆಬ್ಸೈಟ್ 🔥
+
+ಕಾಲೇಜು Cutoff PDF ಗಳನ್ನು ಗಂಟೆಗಳ ಕಾಲ ಹುಡುಕುವ ಅಗತ್ಯವಿಲ್ಲ.
+
+📊 Rank ಆಧಾರಿತ College Prediction
+🏫 258+ Engineering Colleges
+📈 Previous Year Cutoff Analysis
+🎯 Best Branch & College Suggestions
+📚 Counselling Insights
+
+ಈಗಲೇ ಭೇಟಿ ನೀಡಿ:
+👉 ${window.location.origin}?ref=${profile?.referral_code || ''}
+
+ನಿಮ್ಮ Rank ಗೆ ಯಾವ ಕಾಲೇಜು ಸಿಗಬಹುದು ಎಂದು ತಕ್ಷಣ ತಿಳಿಯಿರಿ.
+(Use referral code: ${profile?.referral_code || ''} for +100 bonus credits!)
+
+ಇತರೆ KCET ವಿದ್ಯಾರ್ಥಿಗಳೊಂದಿಗೆ Share ಮಾಡಿ ❤️`
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(referralLink)
-    alert('Referral link copied! Share it with friends.')
+    try {
+      await navigator.clipboard.writeText(getShareMessage())
+      alert('Referral message copied! Share it with friends.')
+    } catch (err) {
+      console.error('Clipboard copy failed:', err)
+    }
   }
 
   const handleShare = async () => {
     if (navigator.share) {
-      await navigator.share({
-        title: 'Join KCET Predictor',
-        text: `Use my referral code ${profile?.referral_code} to get bonus credits on KCET Predictor!`,
-        url: referralLink,
-      })
+      try {
+        await navigator.share({
+          title: 'Join KCET Predictor',
+          text: getShareMessage(),
+        })
+      } catch (err) {
+        console.error('Share failed:', err)
+      }
     } else {
       handleCopy()
     }
