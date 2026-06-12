@@ -187,32 +187,105 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── EXCLUSIVE OFFER BANNER ─────────────────────────────────────────── */}
-        <section className="mb-6" id="exclusive-offer-section">
-          <div className="relative overflow-hidden rounded-2xl p-[2px] bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 shadow-xl">
-            <div className="relative rounded-2xl bg-gradient-to-br from-[#1a0e00] via-[#2d1a00] to-[#1a0e00] p-6 md:p-8 overflow-hidden">
-              {/* Glow effects */}
-              <div className="absolute inset-0 opacity-30 pointer-events-none">
-                <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-yellow-400 blur-3xl translate-x-1/3 -translate-y-1/3" />
-                <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-orange-400 blur-3xl -translate-x-1/4 translate-y-1/4" />
-              </div>
-
-              <div className="relative">
-                {/* Top badge */}
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="flex items-center gap-1.5 bg-yellow-400/20 border border-yellow-400/40 text-yellow-300 text-[11px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
-                    <span className="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse inline-block" />
-                    🔥 Limited Time Offer
-                  </span>
+        {/* ── EXCLUSIVE OFFERS & DOWNLOADS ─────────────────────────────────── */}
+        <section className="mb-6" id="exclusive-offers-section">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            {/* Free Offer: District-Wise College List */}
+            <div className="relative overflow-hidden rounded-2xl p-[2px] bg-gradient-to-r from-teal-400 via-cyan-500 to-brand-500 shadow-xl flex">
+              <div className="relative rounded-2xl bg-gradient-to-br from-[#02131e] via-[#082236] to-[#02131e] p-6 md:p-8 overflow-hidden flex flex-col justify-between w-full">
+                {/* Glow effects */}
+                <div className="absolute inset-0 opacity-20 pointer-events-none">
+                  <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-teal-400 blur-3xl translate-x-1/3 -translate-y-1/3" />
+                  <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-brand-500 blur-3xl -translate-x-1/4 translate-y-1/4" />
                 </div>
 
-                <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-                  <div className="flex-1">
+                <div className="relative flex flex-col h-full justify-between">
+                  <div>
+                    {/* Top badge */}
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="flex items-center gap-1.5 bg-teal-400/20 border border-teal-400/40 text-teal-300 text-[11px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
+                        <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse inline-block" />
+                        🎁 Free KCET Resource
+                      </span>
+                    </div>
+
+                    <h3 className="text-xl md:text-2xl font-black text-white mb-2 leading-tight">
+                      District-Wise <span className="text-teal-400">College List</span>
+                    </h3>
+                    
+                    <p className="text-sm text-cyan-200/80 leading-relaxed mb-4">
+                      Get the official compilation of engineering colleges mapped by district to streamline your option entry process.
+                    </p>
+
+                    {/* Feature pills */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {[
+                        '📁 Complete PDF Format',
+                        '🏫 Organized by District',
+                        '📍 All Karnataka Districts',
+                        '⚡ Free Download',
+                      ].map(f => (
+                        <span key={f} className="text-[11px] font-semibold bg-white/10 border border-white/20 text-cyan-100 px-2.5 py-1 rounded-full">
+                          {f}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    {/* Price */}
+                    <div className="flex flex-wrap items-center gap-4 mb-5">
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-4xl font-black text-teal-400">FREE</span>
+                        <span className="text-lg font-bold text-cyan-400/60 line-through decoration-red-400">₹89</span>
+                      </div>
+                      <span className="bg-red-500 text-white text-xs font-black px-2.5 py-1 rounded-lg tracking-wide animate-pulse">
+                        100% OFF
+                      </span>
+                    </div>
+
+                    {/* Action Button */}
+                    <a
+                      href="https://drive.google.com/file/d/1iTlfOo6JjMbXz0JESZva7wQhP9WdZV3r/view?usp=drive_link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      id="free-pdf-download-btn"
+                      className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-teal-600 hover:bg-teal-500 hover:scale-[1.02] text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-teal-900/40 w-full text-center"
+                    >
+                      <ArrowRight size={16} />
+                      Download Free PDF List
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Premium Offer: Complete Cutoff Data */}
+            <div className="relative overflow-hidden rounded-2xl p-[2px] bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 shadow-xl flex">
+              <div className="relative rounded-2xl bg-gradient-to-br from-[#1a0e00] via-[#2d1a00] to-[#1a0e00] p-6 md:p-8 overflow-hidden flex flex-col justify-between w-full">
+                {/* Glow effects */}
+                <div className="absolute inset-0 opacity-30 pointer-events-none">
+                  <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-yellow-400 blur-3xl translate-x-1/3 -translate-y-1/3" />
+                  <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-orange-400 blur-3xl -translate-x-1/4 translate-y-1/4" />
+                </div>
+
+                <div className="relative flex flex-col h-full justify-between">
+                  <div>
+                    {/* Top badge */}
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="flex items-center gap-1.5 bg-yellow-400/20 border border-yellow-400/40 text-yellow-300 text-[11px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
+                        <span className="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse inline-block" />
+                        🔥 Limited Time Offer
+                      </span>
+                    </div>
+
                     <h3 className="text-xl md:text-2xl font-black text-white mb-2 leading-tight">
                       Get Complete Cutoff Data{' '}
                       <span className="text-yellow-400">2020 – 2025</span>
                     </h3>
-                    <p className="text-sm text-amber-200/80 leading-relaxed mb-4 max-w-lg">
+                    
+                    <p className="text-sm text-amber-200/80 leading-relaxed mb-4">
                       All engineering colleges · Every round · 6 years of data.
                       Perfect for counselling strategy, option entry planning, and trend analysis.
                     </p>
@@ -231,15 +304,17 @@ export default function Home() {
                         </span>
                       ))}
                     </div>
+                  </div>
 
+                  <div>
                     {/* Price + Countdown */}
                     <div className="flex flex-wrap items-center gap-4 mb-5">
                       <div className="flex items-baseline gap-2">
-                        <span className="text-4xl font-black text-white">₹129</span>
+                        <span className="text-4xl font-black text-white">₹49</span>
                         <span className="text-lg font-bold text-amber-400/60 line-through decoration-red-400">₹899</span>
                       </div>
                       <span className="bg-red-500 text-white text-xs font-black px-2.5 py-1 rounded-lg tracking-wide animate-pulse">
-                        85% OFF
+                        94% OFF
                       </span>
                       {/* Countdown */}
                       <div className="flex items-center gap-1.5 bg-black/40 border border-yellow-500/30 px-3 py-1.5 rounded-lg">
@@ -251,11 +326,11 @@ export default function Home() {
                     {/* WhatsApp buttons */}
                     <div className="flex flex-col sm:flex-row gap-2.5">
                       <a
-                        href="https://wa.me/918123824899?text=Hi%2C%20I%20want%20to%20get%20the%20KCET%20cutoff%20data%202020-2025%20for%20%E2%82%B9129"
+                        href="https://wa.me/918123824899?text=Hi%2C%20I%20want%20to%20get%20the%20KCET%20cutoff%20data%202020-2025%20for%20%E2%82%B949"
                         target="_blank"
                         rel="noopener noreferrer"
                         id="offer-wa-btn-1"
-                        className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-green-500 hover:bg-green-400 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-green-900/40 hover:scale-[1.02]"
+                        className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-green-500 hover:bg-green-400 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-green-900/40 hover:scale-[1.02] flex-1 text-center"
                       >
                         <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 flex-shrink-0">
                           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -263,11 +338,11 @@ export default function Home() {
                         WhatsApp: 81238 24899
                       </a>
                       <a
-                        href="https://wa.me/919739331654?text=Hi%2C%20I%20want%20to%20get%20the%20KCET%20cutoff%20data%202020-2025%20for%20%E2%82%B9129"
+                        href="https://wa.me/919739331654?text=Hi%2C%20I%20want%20to%20get%20the%20KCET%20cutoff%20data%202020-2025%20for%20%E2%82%B949"
                         target="_blank"
                         rel="noopener noreferrer"
                         id="offer-wa-btn-2"
-                        className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-green-500 hover:bg-green-400 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-green-900/40 hover:scale-[1.02]"
+                        className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-green-500 hover:bg-green-400 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-green-900/40 hover:scale-[1.02] flex-1 text-center"
                       >
                         <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 flex-shrink-0">
                           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
