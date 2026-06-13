@@ -48,6 +48,22 @@ const FAQS = [
     q: 'How does the category fallback work?',
     a: 'If no seats are reserved for your category in a specific branch, you automatically compete under General Merit cutoffs for that seat.',
   },
+  {
+    q: 'When will the KEA KCET 2026 result and counseling dates be released?',
+    a: 'The Karnataka Examination Authority (KEA) announces the KCET result date 2026 and UG CET counselling schedule on their official website (cetonline.karnataka.gov.in 2026). Keep checking the KEA website for direct result links and login credentials.',
+  },
+  {
+    q: 'How does the KCET option entry 2026 work?',
+    a: 'During KCET option entry 2026, candidates log in to the KEA portal to enter their preferred engineering colleges and branches. The KEA CET system then allocates seats based on your rank, category, and choices.',
+  },
+  {
+    q: 'What is the KCET verification slip 2026 and how to download it?',
+    a: 'The KCET verification slip 2026 is issued by KEA after physical or online document verification. It contains your secret key, which is mandatory to log in for KEA CET option entry and counselling.',
+  },
+  {
+    q: 'Where can I find the official KEA website for CET counselling login?',
+    a: 'All official notifications, CET result links, option entry portals, and counselling instructions are published on the KEA website (cetonline.karnataka.gov.in). Always verify details directly through the official KEA portal.',
+  },
 ]
 
 function TimelineItem({ item, isLast }) {
