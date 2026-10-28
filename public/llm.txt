@@ -1,0 +1,26 @@
+# KCET Cutoff
+
+This site helps students estimate likely KCET engineering college options using rank, category, and cutoff trends for Karnataka colleges.
+
+## Website
+- https://kcetcutoff.in/
+
+## Purpose
+- KCET college predictor for Karnataka engineering admissions
+- Rank-based college and branch prediction
+- Comparison and analytics across college options
+- Help content for students and parents
+
+## Key Pages
+- https://kcetcutoff.in/
+- https://kcetcutoff.in/predict
+- https://kcetcutoff.in/branch-predict
+- https://kcetcutoff.in/explore
+- https://kcetcutoff.in/compare
+- https://kcetcutoff.in/analytics
+- https://kcetcutoff.in/help
+- https://kcetcutoff.in/profile
+
+## Notes
+- This tool provides estimates based on cutoff patterns and available data.
+- Final seat allotment and admissions decisions are governed by official KEA counseling and verification processes.
